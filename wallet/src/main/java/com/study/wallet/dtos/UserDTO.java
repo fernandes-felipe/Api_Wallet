@@ -8,7 +8,6 @@ import jakarta.persistence.Enumerated;
 import java.math.BigDecimal;
 
 public record UserDTO(
-         Long id,
          String firstName,
          String lastName,
          String document,

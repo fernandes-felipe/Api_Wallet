@@ -2,16 +2,14 @@ package com.study.wallet.domain.user;
 
 import com.study.wallet.dtos.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity(name = "users")
 @Table(name="users")
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 @EqualsAndHashCode(of = "id")
 public class User {
 
@@ -36,7 +34,15 @@ public class User {
 
     private BigDecimal balance;
 
-    public User() {
+    public User(Long id, String firstName, String lastName ,String document, String email, String password, BigDecimal balance, UserType userType   ) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.document = document;
+        this.email = email;
+        this.password = password;
+        this.balance = balance;
+        this.userType = userType;
     }
 
     public User(UserDTO data){
